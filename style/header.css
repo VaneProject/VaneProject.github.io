@@ -11,7 +11,8 @@
     vertical-align: inherit;
 }
 
-.h_body svg {
+.h_body .svg {
+    vertical-align: middle;
     width: 16px;
     height: 16px;
 }

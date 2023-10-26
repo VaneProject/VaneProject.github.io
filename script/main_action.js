@@ -20,22 +20,18 @@ function create_member(member) {
     const td = document.createElement("td");
     const a = document.createElement("a");
     const img = document.createElement("img");
-    const sub = document.createElement("sub");
-    const div = document.createElement("div");
     td.className = "developers";
     img.src = `https://avatars.githubusercontent.com/${member.name}?v=4?s=100`;
     img.width = 100;
     img.alt = member.name;
-    sub.innerHTML = `<b>${member.name}</b>`;
-    div.innerHTML = member.role;
     a.href = `https://github.com/${member.name}`;
     a.appendChild(img);
     a.appendChild(document.createElement("br"));
-    a.appendChild(sub);
+    a.appendChild(document.createElement("sub")).innerHTML = `<b>${member.name}</b>`;
     // append element
     td.appendChild(a);
     td.appendChild(document.createElement("br"));
-    td.appendChild(div);
+    td.appendChild(document.createElement("div")).innerHTML = member.role;
     return td;
 }
 // create member table (onload)
@@ -58,7 +54,7 @@ const create_table_item = () => {
 };
 window.onload = create_table_item;
 window.onresize = function () {
-    if (width !== Math.floor(window.innerWidth / 100)) {
+    if (width != Math.floor(window.innerWidth / 100)) {
         create_table_item();
     }
 };

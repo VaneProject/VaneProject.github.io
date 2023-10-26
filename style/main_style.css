@@ -1,0 +1,17 @@
+a {
+    color: white;
+    text-decoration-line: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: #171515;
+    text-align: center;
+}
+
+h1, h2, h3, p, div, ul, li {
+    color: white;
+}

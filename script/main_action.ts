@@ -29,9 +29,6 @@ function create_member(member: Member): HTMLTableCellElement {
     img.width = 100;
     img.alt = member.name;
 
-    // sub.innerHTML = `<b>${member.name}</b>`;
-    // div.innerHTML = member.role;
-
     a.href = `https://github.com/${member.name}`;
     a.appendChild(img);
     a.appendChild(document.createElement("br"));

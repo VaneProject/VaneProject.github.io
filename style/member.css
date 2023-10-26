@@ -1,0 +1,12 @@
+.developers {
+    text-align: center;
+}
+
+.developers > div {
+    font-size: 0.7em;
+}
+
+#developer_table {
+    margin-left: auto;
+    margin-right: auto;
+}
