@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진법변환</title>
+
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/main_style.css">
+
+    <script type="module" src="../bootstrap/bootstrap.min.js"></script>
+    <script type="module" src="../bootstrap/popper.min.js"></script>
+</head>
+<body>
+<header>
+    <h1>진수변환</h1>
+</header>
+<main>
+    <select id="start">
+        <option value="2">2진수</option>
+        <option value="8">8진수</option>
+        <option value="10" selected>10진수</option>
+        <option value="16">16진수</option>
+    </select>
+    <span style="color: white">에서</span>
+    <select id="end">
+        <option value="2" selected>2진수</option>
+        <option value="8">8진수</option>
+        <option value="10">10진수</option>
+        <option value="16">16진수</option>
+    </select>
+
+    <p>입력 <input type="text" id="input"></p>
+    <p>결과 <input type="text" id="result"></p>
+
+    <button id="copy">복사</button>
+    <script type="module" src="../script/decimal_conversion.js"></script>
+</main>
+</body>
+</html>
