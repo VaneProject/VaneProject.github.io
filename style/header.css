@@ -1,11 +1,15 @@
+:root {
+    --img-size: 32px;
+}
+
 /* header */
 .logo > a > *, .logo > div > * {
     vertical-align: middle;
 }
 
-.logo > a > img, .logo > div > img {
-    width: 32px;
-    height: 32px;
+.logo > a > img, .logo > div > img, .fas {
+    width: var(--img-size);
+    height: var(--img-size);
 }
 
 .logo > a > span, .logo > a > span {
@@ -24,11 +28,6 @@
     vertical-align: middle;
     width: 16px;
     height: 16px;
-}
-
-.fas {
-    width: 32px;
-    height: 32px;
 }
 
 .menu_header > li:hover {

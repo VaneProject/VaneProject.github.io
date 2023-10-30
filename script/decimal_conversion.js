@@ -14,3 +14,17 @@ const copy = document.getElementById('copy');
 copy.addEventListener('click', () => {
     navigator.clipboard.writeText(result.value).then(r => { });
 });
+// class items
+class WebItem {
+    constructor(name, content, url, isPrivate) {
+        this.name = name;
+        this.url = url;
+        this.content = content;
+        this.isPrivate = isPrivate;
+    }
+}
+function createItem(item) {
+    const value = `<a href="${item.url}">
+    
+</a>`;
+}

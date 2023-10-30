@@ -1,0 +1,39 @@
+:root {
+    --application-border-color: rgba(255, 255, 255, 0.5);
+    --application-list-icon-size: scale(0.7);
+}
+
+.application_header {
+    border: 1px solid var(--application-border-color);
+    border-radius: 0.5rem;
+    margin: 5px;
+}
+
+.application_body {
+    text-align: left;
+    margin: 10px;
+}
+
+.application_icon {
+    background-size: contain;
+    border-width: 0;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    margin: 7px 24px 0 0;
+    width: 72px;
+    border-radius: 20%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*list icon*/
+.application_list_icon {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+.application_list_text {
+    text-align: left;
+    transform: var(--application-list-icon-size);
+}

@@ -52,7 +52,7 @@ const create_table_item = () => {
     }
     developer_table === null || developer_table === void 0 ? void 0 : developer_table.replaceChildren(...node);
 };
-window.onload = create_table_item;
+window.addEventListener("load", create_table_item);
 window.onresize = function () {
     if (width != Math.floor(window.innerWidth / 100)) {
         create_table_item();

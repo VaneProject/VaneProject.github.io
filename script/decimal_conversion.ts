@@ -15,4 +15,24 @@ copy.addEventListener('click', (): void => {
     navigator.clipboard.writeText(result.value).then(r => {})
 })
 
+// class items
+class WebItem {
+    name: string;
+    content: string;
+    url: string;
+    isPrivate: boolean;
 
+    constructor(name: string, content: string, url: string, isPrivate: boolean) {
+        this.name = name;
+        this.url = url;
+        this.content = content;
+        this.isPrivate = isPrivate;
+    }
+}
+
+function createItem(item: WebItem): void {
+    const value =
+`<a href="${item.url}">
+    
+</a>`
+}

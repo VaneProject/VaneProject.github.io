@@ -59,7 +59,7 @@ const create_table_item = (): void => {
     developer_table?.replaceChildren(...node)
 }
 
-window.onload = create_table_item;
+window.addEventListener("load", create_table_item);
 window.onresize = function(): void {
     if (width != Math.floor(window.innerWidth / 100)) {
         create_table_item();

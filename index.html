@@ -16,11 +16,14 @@
     <link rel="stylesheet" href="style/member.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/language.css">
+    <link rel="stylesheet" href="style/application.css">
 
-    <script type="module" src="script/main_action.js"></script>
-    <script type="module" src="script/menu.js"></script>
+    <script src="script/main_action.js"></script>
+    <script src="script/menu.js"></script>
+    <script src="script/library.js"></script>
+    <script src="script/application.js"></script>
 </head>
-<body>
+<body onload="createApplication(Local.KOR)">
 <header>
     <nav class="navbar">
         <div class="logo">
@@ -84,14 +87,13 @@
     <h3>웹</h3>
     <link rel="stylesheet" href="./style/web_link.css">
     <a href="./web/decimal_conversion.html" class="web_link">진법변환</a>
+    <a href="./web/second.html" class="web_link">초 변환기</a>
 
     <h3>라이브러리</h3>
 
     <h3>게임</h3>
 
-    <h3>애플리케이션</h3>
-
-    <hr>
+    <div class="application_header" id="application_header"></div>
     <h3>멤버</h3>
     <table id="developer_table"></table>
 </main>
