@@ -17,13 +17,20 @@
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/language.css">
     <link rel="stylesheet" href="style/application.css">
+    <link rel="stylesheet" href="style/library.css">
 
+    <script src="script/load/shared_class.js"></script>
     <script src="script/main_action.js"></script>
     <script src="script/menu.js"></script>
-    <script src="script/library.js"></script>
-    <script src="script/application.js"></script>
+
+    <script src="script/load/library.js"></script>
+    <script src="script/load/application.js"></script>
 </head>
-<body onload="createApplication(Local.KOR)">
+<body onload="
+    const local = Local.KOR;
+    createApplication(local);
+    createLibrary(local);
+">
 <header>
     <nav class="navbar">
         <div class="logo">
@@ -89,10 +96,38 @@
     <a href="./web/decimal_conversion.html" class="web_link">진법변환</a>
     <a href="./web/second.html" class="web_link">초 변환기</a>
 
-    <h3>라이브러리</h3>
+    <div class="library_header">
+        <div class="library_body">
+            <a href="${this.googleUrl}">
+                <span style="display: inline-block; margin: 0">
+                    <span style="font-size: 1.2em">${this.getTitle(local)}</span>
+                    <span style="color: gray; border: 1px solid gray; border-radius: 5em; padding: 1px 5px; line-height: 200%;">${status}</span>
+                    <br>
+                    <span style="color: rgba(255,255,255,0.5)">${this.getContent(local)}</span>
+                </span>
+                <ul style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0; align-items : center;">
+                    <li class="application_list_text">
+                        <span class="library_language" style="background-color: #b07219"></span>
+                        <span>Java</span>
+                    </li>
+                    <li class="application_list_text">
+                        <a href="${this.githubUrl}">
+                            <img src="svg/github.svg" alt="github" class="svg application_list_icon">
+                            Github
+                        </a>
+                    </li>
+                    <li class="application_list_text">
+                        <a href="https://github.com/${this.name}">
+                            <img src="svg/developer.svg" alt="developer" class="svg application_list_icon">
+                            ${this.name}
+                        </a>
+                    </li>
+                </ul>
+            </a>
+        </div>
+    </div>
 
     <h3>게임</h3>
-
     <div class="application_header" id="application_header"></div>
     <h3>멤버</h3>
     <table id="developer_table"></table>

@@ -1,10 +1,10 @@
 :root {
-    --application-border-color: rgba(255, 255, 255, 0.5);
-    --application-list-icon-size: scale(0.7);
+    --border-color: rgba(255, 255, 255, 0.5);
+    --list-icon-size: scale(0.7);
 }
 
 .application_header {
-    border: 1px solid var(--application-border-color);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     margin: 5px;
 }
@@ -35,5 +35,6 @@
 
 .application_list_text {
     text-align: left;
-    transform: var(--application-list-icon-size);
+    vertical-align: middle;
+    transform: var(--list-icon-size);
 }

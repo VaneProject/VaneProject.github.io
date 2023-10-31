@@ -6,22 +6,8 @@ class Platform {
 
     public create(): string {
         return `<li class="application_list_text">
-                    <img src="${this.icon}" alt="${this.name}" class="svg application_list_icon">${this.name}
-                </li>`
-    }
-}
-
-class Developer {
-    constructor(
-        private name: string
-    ) {}
-
-    public create(): string {
-        return `<li class="application_list_text">
-                    <a href="https://github.com/${this.name}">
-                        <img src="../svg/developer.svg" alt="developer" class="svg application_list_icon">
-                        ${this.name}
-                    </a>
+                    <img src="${this.icon}" alt="${this.name}" class="svg application_list_icon">
+                    ${this.name}
                 </li>`
     }
 }
@@ -62,7 +48,6 @@ class Application {
     }
 
     public create(local: Local): string {
-        const status: string = this.isPublic ? "Public": "Private"
         let platform = ''
         let developer = ''
         this.platforms.forEach(v => {platform += v.create()})
@@ -72,18 +57,12 @@ class Application {
                 <img src="${this.iconUrl}" class="application_icon" aria-hidden="true" alt="아이콘 이미지" itemprop="image" data-atf="false" data-iml="202.10000000149012">
                 <span style="display: inline-block; margin: 0">
                     <span style="font-size: 1.2em">${this.getTitle(local)}</span>
-                    <span style="color: gray; border: 1px solid gray; border-radius: 5em; padding: 1px 5px; line-height: 200%;">${status}</span>
-                    <br>
+                    ${createStatus(this.isPublic)}<br>
                     <span style="color: rgba(255,255,255,0.5)">${this.getContent(local)}</span>
                 </span>
                 <ul style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0">
+                    ${createGithub(this.githubUrl)}
                     ${platform}
-                    <li class="application_list_text">
-                        <a href="${this.githubUrl}">
-                            <img src="../svg/github.svg" alt="github" class="svg application_list_icon">
-                            Github
-                        </a>
-                    </li>
                     ${developer}
                 </ul>
             </a>
