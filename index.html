@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon/icon.png"/>
 
-    <script src="bootstrap/popper.min.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
-
     <title>Vane</title>
 
     <link rel="stylesheet" href="style/main_style.css">
@@ -19,9 +16,11 @@
     <link rel="stylesheet" href="style/application.css">
     <link rel="stylesheet" href="style/library.css">
 
+    <script src="bootstrap/popper.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
     <script src="script/load/shared_class.js"></script>
     <script src="script/main_action.js"></script>
-    <script src="script/menu.js"></script>
+    <script type="module" src="script/menu.js"></script>
 
     <script src="script/load/library.js"></script>
     <script src="script/load/application.js"></script>
@@ -61,7 +60,7 @@
             </li>
             <li class="menu_hr"><hr/></li>
         </ul>
-        <img src="./svg/menu.svg" alt="menu" class="svg fas">
+        <img src="./svg/menu.svg" alt="menu" class="svg fas" id="menu">
     </nav>
 </header>
 <nav>
@@ -91,44 +90,14 @@
     </ul>
 
     <hr>
-    <h3>웹</h3>
+    <div class="web_header"></div>
     <link rel="stylesheet" href="./style/web_link.css">
     <a href="./web/decimal_conversion.html" class="web_link">진법변환</a>
     <a href="./web/second.html" class="web_link">초 변환기</a>
 
-    <div class="library_header">
-        <div class="library_body">
-            <a href="${this.googleUrl}">
-                <span style="display: inline-block; margin: 0">
-                    <span style="font-size: 1.2em">${this.getTitle(local)}</span>
-                    <span style="color: gray; border: 1px solid gray; border-radius: 5em; padding: 1px 5px; line-height: 200%;">${status}</span>
-                    <br>
-                    <span style="color: rgba(255,255,255,0.5)">${this.getContent(local)}</span>
-                </span>
-                <ul style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0; align-items : center;">
-                    <li class="application_list_text">
-                        <span class="library_language" style="background-color: #b07219"></span>
-                        <span>Java</span>
-                    </li>
-                    <li class="application_list_text">
-                        <a href="${this.githubUrl}">
-                            <img src="svg/github.svg" alt="github" class="svg application_list_icon">
-                            Github
-                        </a>
-                    </li>
-                    <li class="application_list_text">
-                        <a href="https://github.com/${this.name}">
-                            <img src="svg/developer.svg" alt="developer" class="svg application_list_icon">
-                            ${this.name}
-                        </a>
-                    </li>
-                </ul>
-            </a>
-        </div>
-    </div>
-
-    <h3>게임</h3>
-    <div class="application_header" id="application_header"></div>
+    <div class="library_header"></div>
+    <div class="game_header"></div>
+    <div class="application_header"></div>
     <h3>멤버</h3>
     <table id="developer_table"></table>
 </main>

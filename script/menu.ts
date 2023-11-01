@@ -1,4 +1,4 @@
 const menu = document.querySelector(".menu_header");
-document.querySelector(".fas")?.addEventListener('click', () => {
+document.getElementById("menu")?.addEventListener("click", () => {
     menu?.classList.toggle("active");
 })
