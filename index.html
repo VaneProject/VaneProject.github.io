@@ -16,11 +16,13 @@
     <link rel="stylesheet" href="style/application.css">
     <link rel="stylesheet" href="style/library.css">
 
-    <script src="bootstrap/popper.min.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
+    <script type="module" src="bootstrap/popper.min.js"></script>
+    <script type="module" src="bootstrap/bootstrap.min.js"></script>
+    <script type="module" src="script/menu.js"></script>
+    <script type="module" src="script/load/member.js"></script>
+
     <script src="script/load/shared_class.js"></script>
     <script src="script/main_action.js"></script>
-    <script type="module" src="script/menu.js"></script>
 
     <script src="script/load/library.js"></script>
     <script src="script/load/application.js"></script>
@@ -98,7 +100,8 @@
     <div class="library_header"></div>
     <div class="game_header"></div>
     <div class="application_header"></div>
-    <h3>멤버</h3>
+
+    <div class="member_header"></div>
     <table id="developer_table"></table>
 </main>
 </body>
