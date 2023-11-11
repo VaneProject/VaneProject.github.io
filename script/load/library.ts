@@ -26,9 +26,7 @@ class Library {
         public languages: LanguageType[],
         public developers: Developer[],
 
-        public maven: string,
-        public gradle: string,
-        public gradle_kotlin: string
+        private web: string
     ) {}
 
     public getTitle(local: Local): string {
@@ -47,34 +45,15 @@ class Library {
         }
     }
 
-    private createMaven(name: string, code: string): string {
-        const details_style: string[] = [
-            "display: block",
-            "background: #333",
-            "position: relative",
-            "cursor: pointer"
-        ];
-        const maven: string = code
-            .replaceAll('<', "&lt;")
-            .replaceAll('>', "&gt;")
-            .replaceAll('\n', "<br>")
-            .replaceAll(' ', "&nbsp;");
-        return `<ul style="margin: 0; padding: 0">
-                    <details style="${details_style.join('; ')}">
-                        <summary>${name}</summary>
-                        <div style="padding-left: 10px; padding-bottom: 10px">
-                            <code>${maven}</code>
-                        </div>
-                    </details>
-                </ul>`;
-    }
-
     public create(local: Local): string {
-        let repository: string = ''
-        if (this.maven !== '') repository += this.createMaven("Maven", this.maven);
-        if (this.gradle !== '') repository += this.createMaven("Gradle", this.gradle);
-        if (this.gradle_kotlin !== '') repository += this.createMaven("Gradle.kts", this.gradle_kotlin);
-        const url_style: string = "display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0; align-items : center"
+        const url_style: string[] = [
+            "display: flex",
+            "flex-direction: row",
+            "flex-wrap: wrap",
+            "margin: 0",
+            "padding: 0",
+            "align-items : center"
+        ]
         let developer: string = '';
         let language: string = '';
         for (const d of this.developers) developer += d.create();
@@ -85,18 +64,20 @@ class Library {
             </li>`;
         return `
             <div class="library_body">
-                <span style="display: inline-block; margin: 0">
-                    <span style="font-size: 1.2em">${this.getTitle(local)}</span>
-                    ${createStatus(this.isPublic)}<br>
-                    <span style="color: rgba(255,255,255,0.5)">${this.getContent(local)}</span>
-                </span>
-                <ul style="${url_style}; margin: 5px 0">
-                    ${language}
-                </ul>
-                <ul style="${url_style}">
-                    ${createGithub(this.githubUrl)}
-                    ${developer}
-                </ul>
+                <a href="${this.web}">
+                    <span style="display: inline-block; margin: 0">
+                        <span style="font-size: 1.2em">${this.getTitle(local)}</span>
+                        ${createStatus(this.isPublic)}<br>
+                        <span style="color: rgba(255,255,255,0.5)">${this.getContent(local)}</span>
+                    </span>
+                    <ul style="${url_style.join('; ')}; margin: 5px 0">
+                        ${language}
+                    </ul>
+                    <ul style="${url_style.join('; ')}">
+                        ${createGithub(this.githubUrl)}
+                        ${developer}
+                    </ul>
+                </a>
             </div>`;
     }
 }
@@ -110,12 +91,7 @@ libraryList.push(new Library(
     true, "https://github.com/VaneProject/bad-word-filtering",
     [LanguageType.Java],
     [new Developer("PersesTitan")],
-    "<dependency>\n" +
-    "    <groupId>io.github.vaneproject</groupId>\n" +
-    "    <artifactId>vane-badwordfiltering</artifactId>\n" +
-    "    <version>1.0.0</version>\n" +
-    "</dependency>\n",
-    "", ""
+    "./web/library/bad-word-filtering.html"
 ))
 
 libraryList.push(new Library(
@@ -126,7 +102,7 @@ libraryList.push(new Library(
     true, "https://github.com/VaneProject/language-pack",
     [LanguageType.Java],
     [new Developer("PersesTitan")],
-    "", "", ""
+    ""
 ))
 
 function createLibrary(local: Local): void {

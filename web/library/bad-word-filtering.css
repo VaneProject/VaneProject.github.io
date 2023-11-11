@@ -1,0 +1,56 @@
+body {
+    margin: 20px;
+    text-align: left;
+}
+
+td {
+    padding: 0 5px;
+    text-align: center;
+}
+
+th {
+    padding-right: 10px;
+}
+
+#maven_copy:hover, #gradle_copy:hover, #kts_copy:hover {
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
+}
+
+.code_style {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.maven_style {
+    color: #e8bf6a;
+}
+
+.gradle_style {
+    color: #6a8759;
+}
+
+.code_block {
+    background: #2b2b2b;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.prettyprint {
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+.license_name:hover {
+    color: #0a58ca;
+    filter: brightness(0) saturate(100%) invert(30%) sepia(79%) saturate(1682%) hue-rotate(195deg) brightness(85%) contrast(98%);
+}
+
+#maven, #gradle, #kts {
+    width: 100%;
+}
+
+span, b, hr, th, td {
+    color: white;
+}

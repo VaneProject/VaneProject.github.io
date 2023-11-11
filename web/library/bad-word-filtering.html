@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Word Filtering</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../style/main-style.css">
+    <link rel="stylesheet" type="text/css" href="bad-word-filtering.css">
+    <link rel="stylesheet" type="text/css" href="code-prettify-theme.css">
+
+    <script type="module" src="../../bootstrap/bootstrap.min.js"></script>
+    <script type="module" src="../../bootstrap/popper.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="../../script/load/shared_class.js"></script>
+    <script src="library.js"></script>
+    <script src="bad-word-filtering.js"></script>
+</head>
+<body onload="
+    setLocal(Local.KOR);
+    createContent(Local.KOR);
+    primaryCreate('badwordfiltering', bad_word_filtering_version);
+    setTitle('Bad Word Filtering');
+    setLicense('https://github.com/VaneProject/bad-word-filtering/blob/master/LICENSE', 'MIT');
+    setDeveloper('PersesTitan');
+    setLanguage('Java');
+">
+<h1 id="library_title"></h1>
+<hr>
+<table>
+    <tr>
+        <td><img src="../../svg/developer.svg" alt="developer" width="20"></td>
+        <th class="developer_title">개발자</th>
+        <td class="developer_name"></td>
+    </tr>
+    <tr>
+        <td><img src="../../svg/vane_role.svg" alt="license" width="16"></td>
+        <th class="license_title">라이센스</th>
+        <td class="license_name"><a class="license_link"></a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <th class="version_title">버전</th>
+        <td class="version_name">1.0.0</td>
+    </tr>
+    <tr>
+        <td></td>
+        <th class="language_title">언어</th>
+        <td class="language_name"></td>
+    </tr>
+</table>
+<!-- maven, gradle, kts -->
+<div class="code_block">
+    Maven <img src="../../svg/copy.svg" alt="copy" id="maven_copy" width="16"><br><hr>
+    <div class="maven">
+        <span class="maven_style">&lt;dependency&gt;</span><br>
+        <span class="maven_style">&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;</span><span class="maven_group"></span><span class="maven_style">&lt;/groupId&gt;</span><br>
+        <span class="maven_style">&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;</span><span class="maven_artifact"></span><span class="maven_style">&lt;/artifactId&gt;</span><br>
+        <span class="maven_style">&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;</span><span class="maven_version"></span><span class="maven_style">&lt;/version&gt;</span><br>
+        <span class="maven_style">&lt;/dependency&gt;</span>
+    </div>
+</div>
+<div class="code_block">
+    Gradle <img src="../../svg/copy.svg" alt="copy" id="gradle_copy" width="16"><br><hr>
+    <div class="gradle">
+        implementation <span class="gradle_style">'<span class="maven_group gradle_style"></span>:<span class="maven_artifact gradle_style"></span>:<span class="maven_version gradle_style"></span>'</span>
+    </div>
+</div>
+<div class="code_block">
+    Gradle Kotlin <img src="../../svg/copy.svg" alt="copy" id="kts_copy" width="16"><br><hr>
+    <div class="kts">
+        implementation(<span class="gradle_style">"<span class="maven_group gradle_style"></span>:<span class="maven_artifact gradle_style"></span>:<span class="maven_version gradle_style"></span>"</span>)
+    </div>
+</div>
+
+<hr style="margin: 30px 0">
+<div id="library_content"></div>
+</body>
+</html>

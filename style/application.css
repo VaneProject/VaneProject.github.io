@@ -1,6 +1,8 @@
 :root {
     --border-color: rgba(255, 255, 255, 0.5);
     --list-icon-size: scale(0.7);
+    --box-shadow-color: rgba(60,64,67,.3);
+    --application-icon-size: 72px;
 }
 
 .application_header {
@@ -17,9 +19,11 @@
 .application_icon {
     background-size: contain;
     border-width: 0;
-    box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
-    margin: 7px 24px 0 0;
-    width: 72px;
+    box-shadow: 0 1px 2px 0 var(--box-shadow-color), 0 1px 3px 1px var(--box-shadow-color);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: var(--application-icon-size);
+    height: var(--application-icon-size);
     border-radius: 20%;
     display: inline-block;
     vertical-align: middle;
