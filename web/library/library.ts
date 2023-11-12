@@ -86,7 +86,7 @@ function getMavenValues(maven: Element, values: string[]): void {
     }
 }
 
-window.addEventListener('load', (): void => {
+function addCopyFunction(): void {
     const maven_copy: HTMLImageElement = document.getElementById("maven_copy") as HTMLImageElement;
     const maven: Element = document.getElementsByClassName("maven")[0];
     setCopyFunction(maven_copy, (): string => {
@@ -106,4 +106,4 @@ window.addEventListener('load', (): void => {
     setCopyFunction(kts_copy, (): string => {
         return kts.textContent as string;
     });
-});
+}

@@ -1,6 +1,6 @@
 function createPre(data: string): HTMLPreElement {
     const pre: HTMLPreElement = document.createElement("pre");
-    const code = document.createElement("code");
+    const code: HTMLElement = document.createElement("code");
     code.classList.add("language-java");
     code.innerText = data;
     pre.classList.add("prettyprint");

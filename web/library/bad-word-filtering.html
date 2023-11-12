@@ -10,22 +10,11 @@
     <link rel="stylesheet" type="text/css" href="bad-word-filtering.css">
     <link rel="stylesheet" type="text/css" href="code-prettify-theme.css">
 
-    <script type="module" src="../../bootstrap/bootstrap.min.js"></script>
-    <script type="module" src="../../bootstrap/popper.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-    <script src="../../script/load/shared_class.js"></script>
-    <script src="library.js"></script>
     <script src="bad-word-filtering.js"></script>
+    <script src="library.js"></script>
+    <script src="../../script/load/shared_class.js"></script>
 </head>
-<body onload="
-    setLocal(Local.KOR);
-    createContent(Local.KOR);
-    primaryCreate('badwordfiltering', bad_word_filtering_version);
-    setTitle('Bad Word Filtering');
-    setLicense('https://github.com/VaneProject/bad-word-filtering/blob/master/LICENSE', 'MIT');
-    setDeveloper('PersesTitan');
-    setLanguage('Java');
-">
+<body>
 <h1 id="library_title"></h1>
 <hr>
 <table>
@@ -76,5 +65,17 @@
 
 <hr style="margin: 30px 0">
 <div id="library_content"></div>
+
+<script>
+    createContent(Local.KOR);
+    setLocal(Local.KOR);
+    setTitle('Bad Word Filtering');
+    primaryCreate('badwordfiltering', bad_word_filtering_version);
+    setLicense('https://github.com/VaneProject/bad-word-filtering/blob/master/LICENSE', 'MIT');
+    setDeveloper('PersesTitan');
+    setLanguage('Java');
+    addCopyFunction();
+</script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 </html>

@@ -82,7 +82,7 @@ function getMavenValues(maven, values) {
             getMavenValues(children, values);
     }
 }
-window.addEventListener('load', () => {
+function addCopyFunction() {
     const maven_copy = document.getElementById("maven_copy");
     const maven = document.getElementsByClassName("maven")[0];
     setCopyFunction(maven_copy, () => {
@@ -100,4 +100,4 @@ window.addEventListener('load', () => {
     setCopyFunction(kts_copy, () => {
         return kts.textContent;
     });
-});
+}

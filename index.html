@@ -27,11 +27,7 @@
     <script src="script/load/library.js"></script>
     <script src="script/load/application.js"></script>
 </head>
-<body onload="
-    const local = Local.KOR;
-    createApplication(local);
-    createLibrary(local);
-">
+<body>
 <header>
     <nav class="navbar">
         <div class="logo">
@@ -104,5 +100,10 @@
     <div class="member_header"></div>
     <table id="developer_table"></table>
 </main>
+<script>
+    const local = Local.KOR;
+    createApplication(local);
+    createLibrary(local);
+</script>
 </body>
 </html>
