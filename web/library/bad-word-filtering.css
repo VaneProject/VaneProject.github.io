@@ -38,6 +38,14 @@ th {
     word-break: break-all;
 }
 
+.svg {
+    margin-bottom: 16px;
+}
+
+#library_title {
+    display: inline-block;
+}
+
 .prettyprint {
     border-radius: 5px;
     background: #fafafa;

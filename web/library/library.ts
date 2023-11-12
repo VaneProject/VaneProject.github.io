@@ -107,3 +107,27 @@ function addCopyFunction(): void {
         return kts.textContent as string;
     });
 }
+
+function setMainLink(local: Local): void {
+    const main_link: HTMLAnchorElement = document.getElementsByClassName("main_link")[0] as HTMLAnchorElement;
+    switch (local) {
+        case Local.KOR:
+            main_link.href = "/index.html";
+            break;
+        case Local.ENG:
+            main_link.href = "/index_eng.html";
+            break;
+        case Local.JAP:
+            main_link.href = "/index_jap.html";
+            break;
+    }
+}
+
+function changeIcon(): void {
+    const title: HTMLElement = document.getElementById("library_title") as HTMLElement;
+    const icon: HTMLImageElement = document.getElementsByClassName("svg")[0] as HTMLImageElement;
+    const size: string = title.offsetHeight + "px";
+    icon.style.width = size;
+    icon.style.height = size;
+}
+window.addEventListener('resize', changeIcon);

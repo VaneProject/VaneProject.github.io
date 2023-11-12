@@ -101,3 +101,25 @@ function addCopyFunction() {
         return kts.textContent;
     });
 }
+function setMainLink(local) {
+    const main_link = document.getElementsByClassName("main_link")[0];
+    switch (local) {
+        case Local.KOR:
+            main_link.href = "/index.html";
+            break;
+        case Local.ENG:
+            main_link.href = "/index_eng.html";
+            break;
+        case Local.JAP:
+            main_link.href = "/index_jap.html";
+            break;
+    }
+}
+function changeIcon() {
+    const title = document.getElementById("library_title");
+    const icon = document.getElementsByClassName("svg")[0];
+    const size = title.offsetHeight + "px";
+    icon.style.width = size;
+    icon.style.height = size;
+}
+window.addEventListener('resize', changeIcon);
