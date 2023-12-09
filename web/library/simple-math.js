@@ -4,7 +4,7 @@
     setLocal(lc.getLocal());
     setMainLink(lc.getLocal());
     setTitle('simple-math');
-    // primaryCreate('badwordfiltering', bad_word_filtering_version);
+    primaryCreate("", simple_math_version);
     setLicense('https://github.com/VaneProject/simple-math/blob/master/LICENSE.txt', 'MIT');
     setDeveloper('PersesTitan');
     setLanguage('Ruby');
