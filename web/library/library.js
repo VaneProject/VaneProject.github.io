@@ -1,5 +1,6 @@
 "use strict";
 const bad_word_filtering_version = "1.0.0";
+const simple_math_version = "0.1.0";
 function primaryCreate(artifact, version) {
     for (const groups of document.getElementsByClassName("maven_group")) {
         groups.textContent = "io.github.vaneproject";

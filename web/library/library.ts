@@ -1,4 +1,5 @@
 const bad_word_filtering_version: string = "1.0.0";
+const simple_math_version: string = "0.1.0";
 
 function primaryCreate(artifact: string, version: string): void {
     for (const groups of document.getElementsByClassName("maven_group")) {
