@@ -1,6 +1,70 @@
 "use strict";
 const bad_word_filtering_version = "1.0.0";
 const simple_math_version = "0.1.0";
+function createPre(language, data) {
+    const pre = document.createElement("pre");
+    const code = document.createElement("code");
+    code.classList.add(language);
+    code.innerText = data;
+    pre.classList.add("prettyprint");
+    pre.appendChild(code);
+    return pre;
+}
+class LibraryContent {
+    constructor(pretty_language) {
+        this.library_content = document.getElementById("library_content");
+        this.pretty_language = pretty_language;
+        const url = new URL(window.location.href).searchParams;
+        if (url.has("language")) {
+            switch (url.get("language")) {
+                case "eng":
+                    this.local = Local.ENG;
+                    break;
+                case "jap":
+                    this.local = Local.JAP;
+                    break;
+                default:
+                    this.local = Local.KOR;
+                    break;
+            }
+        }
+        else {
+            this.local = Local.KOR;
+        }
+    }
+    getLocal() {
+        return this.local;
+    }
+    addTag(tag, content, content_eng = content, content_jap = content) {
+        switch (this.local) {
+            case Local.KOR:
+                this.library_content.appendChild(document.createElement(tag)).innerText = content;
+                break;
+            case Local.ENG:
+                this.library_content.appendChild(document.createElement(tag)).innerText = content_eng;
+                break;
+            case Local.JAP:
+                this.library_content.appendChild(document.createElement(tag)).innerText = content_jap;
+                break;
+        }
+    }
+    addCode(content, content_eng = content, content_jap = content) {
+        switch (this.local) {
+            case Local.KOR:
+                this.library_content.appendChild(createPre(this.pretty_language, content));
+                break;
+            case Local.ENG:
+                this.library_content.appendChild(createPre(this.pretty_language, content_eng));
+                break;
+            case Local.JAP:
+                this.library_content.appendChild(createPre(this.pretty_language, content_jap));
+                break;
+        }
+    }
+}
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////     library      ////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 function primaryCreate(artifact, version) {
     for (const groups of document.getElementsByClassName("maven_group")) {
         groups.textContent = "io.github.vaneproject";
@@ -33,6 +97,9 @@ function setDeveloper(...names) {
 }
 function setLanguage(...languages) {
     document.getElementsByClassName("language_name")[0].textContent = languages.join(", ");
+}
+function setGemLink(link) {
+    document.getElementsByClassName("rubygems_link")[0].href = link;
 }
 function setLocal(local) {
     const developer_title = document.getElementsByClassName("developer_title")[0];

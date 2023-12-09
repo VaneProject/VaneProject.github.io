@@ -1,6 +1,78 @@
 const bad_word_filtering_version: string = "1.0.0";
 const simple_math_version: string = "0.1.0";
 
+function createPre(language: string, data: string): HTMLPreElement {
+    const pre: HTMLPreElement = document.createElement("pre");
+    const code: HTMLElement = document.createElement("code");
+    code.classList.add(language);
+    code.innerText = data;
+    pre.classList.add("prettyprint");
+    pre.appendChild(code);
+    return pre;
+}
+
+class LibraryContent {
+    private library_content: HTMLDivElement;
+    private readonly local: Local;
+    private readonly pretty_language: string;
+    constructor(pretty_language: string) {
+        this.library_content = document.getElementById("library_content") as HTMLDivElement;
+        this.pretty_language = pretty_language;
+        const url: URLSearchParams = new URL(window.location.href).searchParams;
+        if (url.has("language")) {
+            switch (url.get("language")) {
+                case "eng":
+                    this.local = Local.ENG;
+                    break;
+                case "jap":
+                    this.local = Local.JAP;
+                    break;
+                default:
+                    this.local = Local.KOR;
+                    break;
+            }
+        } else {
+            this.local = Local.KOR;
+        }
+    }
+
+    public getLocal(): Local {
+        return this.local;
+    }
+
+    public addTag(tag: string, content: string, content_eng: string = content, content_jap: string = content): void {
+        switch (this.local) {
+            case Local.KOR:
+                this.library_content.appendChild(document.createElement(tag)).innerText = content;
+                break;
+            case Local.ENG:
+                this.library_content.appendChild(document.createElement(tag)).innerText = content_eng;
+                break;
+            case Local.JAP:
+                this.library_content.appendChild(document.createElement(tag)).innerText = content_jap;
+                break;
+        }
+
+    }
+
+    public addCode(content: string, content_eng: string = content, content_jap: string = content): void {
+        switch (this.local) {
+            case Local.KOR:
+                this.library_content.appendChild(createPre(this.pretty_language, content));
+                break;
+            case Local.ENG:
+                this.library_content.appendChild(createPre(this.pretty_language, content_eng));
+                break;
+            case Local.JAP:
+                this.library_content.appendChild(createPre(this.pretty_language, content_jap));
+                break;
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////     library      ////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 function primaryCreate(artifact: string, version: string): void {
     for (const groups of document.getElementsByClassName("maven_group")) {
         groups.textContent = "io.github.vaneproject";
@@ -37,6 +109,10 @@ function setDeveloper(...names: string[]): void {
 
 function setLanguage(...languages: string[]): void {
     document.getElementsByClassName("language_name")[0].textContent = languages.join(", ");
+}
+
+function setGemLink(link: string): void {
+    (document.getElementsByClassName("rubygems_link")[0] as HTMLAnchorElement).href = link;
 }
 
 function setLocal(local: Local): void {

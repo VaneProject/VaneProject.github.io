@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="library.css">
     <link rel="stylesheet" type="text/css" href="code-prettify-theme.css">
 
-    <script src="simple-math.js"></script>
     <script src="library.js"></script>
     <script src="../../script/load/shared_class.js"></script>
 </head>
@@ -19,7 +18,17 @@
     <a class="main_link"><img src="../../icon/icon.png" alt="vane" class="svg"></a>
     <h1 id="library_title"></h1>
 </div>
+
 <hr>
+<a class="rubygems_link">
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="rubygems" width="30">
+        <title>RubyGems</title>
+        <path d="M7.81 7.9l-2.97 2.95 7.19 7.18 2.96-2.95 4.22-4.23-2.96-2.96v-.01H7.8zM12 0L1.53 6v12L12 24l10.47-6V6L12 0zm8.47 16.85L12 21.73l-8.47-4.88V7.12L12 2.24l8.47 4.88v9.73z"/>
+    </svg>
+    Rubygems
+</a>
+<hr>
+
 <table>
     <tr>
         <td><img src="../../svg/developer.svg" alt="developer" width="20"></td>
@@ -42,46 +51,19 @@
         <td class="language_name"></td>
     </tr>
 </table>
-<!-- maven, gradle, kts -->
-<div class="code_block">
-    Maven <img src="../../svg/copy.svg" alt="copy" id="maven_copy" width="16"><br><hr>
-    <div class="maven">
-        <span class="maven_style">&lt;dependency&gt;</span><br>
-        <span class="maven_style">&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;</span><span class="maven_group"></span><span class="maven_style">&lt;/groupId&gt;</span><br>
-        <span class="maven_style">&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;</span><span class="maven_artifact"></span><span class="maven_style">&lt;/artifactId&gt;</span><br>
-        <span class="maven_style">&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;</span><span class="maven_version"></span><span class="maven_style">&lt;/version&gt;</span><br>
-        <span class="maven_style">&lt;/dependency&gt;</span>
-    </div>
-</div>
-<div class="code_block">
-    Gradle <img src="../../svg/copy.svg" alt="copy" id="gradle_copy" width="16"><br><hr>
-    <div class="gradle">
-        implementation <span class="gradle_style">'<span class="maven_group gradle_style"></span>:<span class="maven_artifact gradle_style"></span>:<span class="maven_version gradle_style"></span>'</span>
-    </div>
-</div>
-<div class="code_block">
-    Gradle Kotlin <img src="../../svg/copy.svg" alt="copy" id="kts_copy" width="16"><br><hr>
-    <div class="kts">
-        implementation(<span class="gradle_style">"<span class="maven_group gradle_style"></span>:<span class="maven_artifact gradle_style"></span>:<span class="maven_version gradle_style"></span>"</span>)
-    </div>
-</div>
+
+<!--<div class="code_block">-->
+<!--    Gemfile <img src="../../svg/copy.svg" alt="copy" id="maven_copy" width="16"><br><hr>-->
+<!--    <div class="maven">gem 'simple-math', '~> 0.1.0'</div>-->
+<!--</div>-->
+<!--<div class="code_block">-->
+<!--    Gradle <img src="../../svg/copy.svg" alt="copy" id="gradle_copy" width="16"><br><hr>-->
+<!--    <div class="gradle">gem install simple-math</div>-->
+<!--</div>-->
 
 <hr style="margin: 30px 0">
 <div id="library_content"></div>
-
-<script>
-    const local = Local.KOR;
-    createContent(local);
-    setLocal(local);
-    setMainLink(local);
-    setTitle('Bad Word Filtering');
-    primaryCreate('simple-math', simple_math_version);
-    setLicense('https://github.com/VaneProject/simple-math/blob/master/LICENSE.txt', 'MIT');
-    setDeveloper('PersesTitan');
-    setLanguage('Ruby');
-    addCopyFunction();
-    changeIcon();
-</script>
+<script type="module" src="simple-math.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 </html>

@@ -63,3 +63,15 @@ th {
 span, b, hr, th, td {
     color: white;
 }
+
+/* ruby gems */
+.rubygems_link:hover {
+    fill: #E9573F;
+    color: #E9573F;
+}
+
+.rubygems_link {
+    font-size: 1.3em;
+    fill: white;
+    color: white;
+}
