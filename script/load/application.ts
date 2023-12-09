@@ -91,7 +91,7 @@ applications.push(new Application(
 ))
 
 function createApplication(local: Local) {
-    let body = ''
+    let body: string = ''
     for (const app of applications) body += app.create(local)
     document.getElementsByClassName("application_header")[0].innerHTML = body;
 }
