@@ -11,6 +11,7 @@ var LanguageType;
     LanguageType["Java"] = "#b07219";
     LanguageType["JavaScript"] = "#F7DF1E";
     LanguageType["TypeScript"] = "#3178C6";
+    LanguageType["Ruby"] = "#701516";
 })(LanguageType || (LanguageType = {}));
 class Developer {
     constructor(name) {

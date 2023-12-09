@@ -6,7 +6,8 @@ enum Local {
 enum LanguageType {
     Java = "#b07219",
     JavaScript = "#F7DF1E",
-    TypeScript = "#3178C6"
+    TypeScript = "#3178C6",
+    Ruby = "#701516"
 }
 
 class Developer {
