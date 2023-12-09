@@ -1,0 +1,16 @@
+#token1, #token1_text, #token2, #token2_text {
+    width: 50%;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 50%;
+}
+
+table, th, td {
+    border:1px solid white;
+    border-collapse : collapse;
+}
