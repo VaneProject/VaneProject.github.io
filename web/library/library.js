@@ -75,6 +75,7 @@ function primaryCreate(artifact, version) {
     for (const versions of document.getElementsByClassName("maven_version")) {
         versions.textContent = version;
     }
+    document.getElementsByClassName("version_name")[0].innerText = version;
 }
 function setTitle(text) {
     const title = document.getElementById("library_title");

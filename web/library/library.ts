@@ -83,6 +83,8 @@ function primaryCreate(artifact: string, version: string): void {
     for (const versions of document.getElementsByClassName("maven_version")) {
         versions.textContent = version;
     }
+
+    (document.getElementsByClassName("version_name")[0] as HTMLElement).innerText = version;
 }
 
 function setTitle(text: string): void {
