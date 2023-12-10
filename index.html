@@ -26,10 +26,12 @@
     <script type="module" src="script/load/member.js"></script>
 
     <script src="script/load/shared_class.js"></script>
-    <script src="script/main_action.js"></script>
+    <script src="script/application/Application.js"></script>
+    <script src="script/application/Platform.js"></script>
+    <script src="script/library/Library.js"></script>
 
-    <script src="script/load/library.js"></script>
-    <script src="script/load/application.js"></script>
+    <script type="module" src="script/library/library_run.js"></script>
+    <script type="module" src="script/application/application_run.js"></script>
 </head>
 <body>
 <header>
@@ -104,10 +106,5 @@
     <div class="member_header"></div>
     <table id="developer_table"></table>
 </main>
-<script>
-    const local = Local.KOR;
-    createApplication(local);
-    createLibrary(local);
-</script>
 </body>
 </html>

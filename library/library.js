@@ -14,23 +14,23 @@ class LibraryContent {
     constructor(pretty_language) {
         this.library_content = document.getElementById("library_content");
         this.pretty_language = pretty_language;
-        const url = new URL(window.location.href).searchParams;
-        if (url.has("language")) {
-            switch (url.get("language")) {
-                case "eng":
-                    this.local = Local.ENG;
-                    break;
-                case "jap":
-                    this.local = Local.JAP;
-                    break;
-                default:
-                    this.local = Local.KOR;
-                    break;
-            }
-        }
-        else {
-            this.local = Local.KOR;
-        }
+        // const url: URLSearchParams = new URL(window.location.href).searchParams;
+        this.local = getLocal();
+        // if (url.has("language")) {
+        //     switch (url.get("language")) {
+        //         case "eng":
+        //             this.local = Local.ENG;
+        //             break;
+        //         case "jap":
+        //             this.local = Local.JAP;
+        //             break;
+        //         default:
+        //             this.local = Local.KOR;
+        //             break;
+        //     }
+        // } else {
+        //     this.local = Local.KOR;
+        // }
     }
     getLocal() {
         return this.local;
@@ -174,13 +174,13 @@ function setMainLink(local) {
     const main_link = document.getElementsByClassName("main_link")[0];
     switch (local) {
         case Local.KOR:
-            main_link.href = "/index.html";
+            main_link.href = "../index.html";
             break;
         case Local.ENG:
-            main_link.href = "/index_eng.html";
+            main_link.href = "../index_eng.html";
             break;
         case Local.JAP:
-            main_link.href = "/index_jap.html";
+            main_link.href = "../index_jap.html";
             break;
     }
 }

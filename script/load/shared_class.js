@@ -49,3 +49,15 @@ function createGithub(url) {
                 </a>
             </li>`;
 }
+function getLocal() {
+    const url = new URL(window.location.href).searchParams;
+    if (url.has("language")) {
+        switch (url.get("language")) {
+            case "eng": return Local.ENG;
+            case "jap": return Local.JAP;
+            default: return Local.KOR;
+        }
+    }
+    else
+        return Local.KOR;
+}

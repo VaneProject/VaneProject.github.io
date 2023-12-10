@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bad Word Filtering</title>
 
-    <link rel="stylesheet" type="text/css" href="../../bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../style/main-style.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../style/main-style.css">
     <link rel="stylesheet" type="text/css" href="library.css">
     <link rel="stylesheet" type="text/css" href="code-prettify-theme.css">
 
     <script src="library.js"></script>
-    <script src="../../script/load/shared_class.js"></script>
+    <script src="../script/load/shared_class.js"></script>
 </head>
 <body>
 <div>
-    <a class="main_link"><img src="../../icon/icon.png" alt="vane" class="svg"></a>
-    <h1 id="library_title"></h1>
+    <a class="main_link">
+        <img src="../icon/icon.png" alt="vane" class="svg">
+        <h1 id="library_title"></h1>
+    </a>
 </div>
 <hr>
 <table>
     <tr>
-        <td><img src="../../svg/developer.svg" alt="developer" width="20"></td>
+        <td><img src="../svg/developer.svg" alt="developer" width="20"></td>
         <th class="developer_title">개발자</th>
         <td class="developer_name"></td>
     </tr>
     <tr>
-        <td><img src="../../svg/vane_role.svg" alt="license" width="16"></td>
+        <td><img src="../svg/vane_role.svg" alt="license" width="16"></td>
         <th class="license_title">라이센스</th>
         <td class="license_name"><a class="license_link"></a></td>
     </tr>
@@ -43,7 +45,7 @@
 </table>
 <!-- maven, gradle, kts -->
 <div class="code_block">
-    Maven <img src="../../svg/copy.svg" alt="copy" id="maven_copy" width="16"><br><hr>
+    Maven <img src="../svg/copy.svg" alt="copy" id="maven_copy" width="16"><br><hr>
     <div class="maven">
         <span class="maven_style">&lt;dependency&gt;</span><br>
         <span class="maven_style">&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;</span><span class="maven_group"></span><span class="maven_style">&lt;/groupId&gt;</span><br>
@@ -53,13 +55,13 @@
     </div>
 </div>
 <div class="code_block">
-    Gradle <img src="../../svg/copy.svg" alt="copy" id="gradle_copy" width="16"><br><hr>
+    Gradle <img src="../svg/copy.svg" alt="copy" id="gradle_copy" width="16"><br><hr>
     <div class="gradle">
         implementation <span class="gradle_style">'<span class="maven_group gradle_style"></span>:<span class="maven_artifact gradle_style"></span>:<span class="maven_version gradle_style"></span>'</span>
     </div>
 </div>
 <div class="code_block">
-    Gradle Kotlin <img src="../../svg/copy.svg" alt="copy" id="kts_copy" width="16"><br><hr>
+    Gradle Kotlin <img src="../svg/copy.svg" alt="copy" id="kts_copy" width="16"><br><hr>
     <div class="kts">
         implementation(<span class="gradle_style">"<span class="maven_group gradle_style"></span>:<span class="maven_artifact gradle_style"></span>:<span class="maven_version gradle_style"></span>"</span>)
     </div>

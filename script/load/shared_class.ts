@@ -46,3 +46,14 @@ function createGithub(url: string): string {
                 </a>
             </li>`;
 }
+
+function getLocal(): Local {
+    const url: URLSearchParams = new URL(window.location.href).searchParams;
+    if (url.has("language")) {
+        switch (url.get("language")) {
+            case "eng": return Local.ENG;
+            case "jap": return Local.JAP;
+            default: return Local.KOR;
+        }
+    } else return Local.KOR;
+}
