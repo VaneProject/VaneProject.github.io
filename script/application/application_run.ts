@@ -21,6 +21,23 @@ const applications: Application[] = [];
         "ただ黒い画面が出てくる単純なアプリです。",
         android, persestitan
     ));
+
+    applications.push(new Application(
+        "https://play.google.com/store/apps/details?id=com.vane.ourneighborhoodstory",
+        "https://play-lh.googleusercontent.com/T3l0ty9gkotP41ERH0wDLR-XBSvICNY1kUiT5uLHvCQDXtFmk87jEPioXGbrgvaIsiXt=w240-h480-rw",
+        "https://github.com/VaneProject/OurNeighborhoodStory",
+        false,
+        "우리 동네 이야기", "우리 동네 이야기", "우리 동네 이야기",
+        "우리 동네의 정보를 공유할 수 있는 '우리 동네 이야기'",
+        "우리 동네의 정보를 공유할 수 있는 '우리 동네 이야기'",
+        "우리 동네의 정보를 공유할 수 있는 '우리 동네 이야기'",
+        android, [
+            new Developer("PersesTitan"),
+            new Developer("JonghoS"),
+            new Developer("ModernJake"),
+            new Developer("keeui0")
+        ]
+    ))
     createApplication(local)
 }).call(null);
 
