@@ -24,7 +24,10 @@ const members: Member[] = [
     new Member("PersesTitan", Role.Owner),
     new Member("LockBell", Role.Member),
     new Member("SpaceAnd", Role.Member),
-    new Member("HeavyRainy", Role.Member)
+    new Member("HeavyRainy", Role.Member),
+    new Member("JonghoS", Role.Member),
+    new Member("ModernJake", Role.Member),
+    new Member("keeui0", Role.Member)
 ];
 
 let body: string = `<ul style="display: inline-block; padding: 0">`;
