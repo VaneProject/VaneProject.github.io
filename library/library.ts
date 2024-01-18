@@ -1,5 +1,6 @@
 const bad_word_filtering_version: string = "1.0.0";
 const simple_math_version: string = "0.1.0";
+const cut_image_version: string = "1.0.0";
 
 function createPre(language: string, data: string): HTMLPreElement {
     const pre: HTMLPreElement = document.createElement("pre");
@@ -18,23 +19,7 @@ class LibraryContent {
     constructor(pretty_language: string) {
         this.library_content = document.getElementById("library_content") as HTMLDivElement;
         this.pretty_language = pretty_language;
-        // const url: URLSearchParams = new URL(window.location.href).searchParams;
         this.local = getLocal();
-        // if (url.has("language")) {
-        //     switch (url.get("language")) {
-        //         case "eng":
-        //             this.local = Local.ENG;
-        //             break;
-        //         case "jap":
-        //             this.local = Local.JAP;
-        //             break;
-        //         default:
-        //             this.local = Local.KOR;
-        //             break;
-        //     }
-        // } else {
-        //     this.local = Local.KOR;
-        // }
     }
 
     public getLocal(): Local {
@@ -54,6 +39,10 @@ class LibraryContent {
                 break;
         }
 
+    }
+
+    public addTags<T extends Node>(node: T): void {
+        this.library_content.appendChild(node);
     }
 
     public addCode(content: string, content_eng: string = content, content_jap: string = content): void {
@@ -118,30 +107,30 @@ function setGemLink(link: string): void {
     (document.getElementsByClassName("rubygems_link")[0] as HTMLAnchorElement).href = link;
 }
 
-function setLocal(local: Local): void {
-    const developer_title: Element = document.getElementsByClassName("developer_title")[0];
-    const license_title: Element = document.getElementsByClassName("license_title")[0];
-    const version_title: Element = document.getElementsByClassName("version_title")[0];
-    const language_title: Element = document.getElementsByClassName("language_title")[0];
-    switch (local) {
-        case Local.KOR:
-            developer_title.textContent = "개발자";
-            license_title.textContent = "라이센스";
-            version_title.textContent = "버전";
-            language_title.textContent = "언어";
-            break;
-        case Local.ENG:
-            developer_title.textContent = "Developer";
-            license_title.textContent = "License";
-            version_title.textContent = "Version";
-            language_title.textContent = "Language";
-            break;
-        case Local.JAP:
-            developer_title.textContent = "開発者";
-            license_title.textContent = "ライセンス";
-            version_title.textContent = "バージョン";
-            language_title.textContent = "言語";
-            break;
+function getLocalText(kor: string, eng: string, jap: string): string {
+    switch (getLocal()) {
+        case Local.KOR: return kor;
+        case Local.ENG: return eng;
+        case Local.JAP: return jap;
+    }
+}
+
+function setElementText(name: string, kor: string, eng: string, jap: string): void {
+    const elements = document.getElementsByClassName(name);
+    if (elements.length > 0)
+        elements[0].textContent = getLocalText(kor, eng, jap);
+}
+
+function setLocal(tag_link: string|null = null): void {
+    setElementText("developer_title", "개발자", "Developer", "開発者");
+    setElementText("license_title", "라이센스", "License", "ライセンス");
+    setElementText("version_title", "버전", "Version", "バージョン");
+    setElementText("language_title", "언어", "Language", "言語");
+    setElementText("tag_title", "릴리스", "Releases", "リリース");
+    if (tag_link != null) {
+        const tag_name: HTMLAnchorElement = document.getElementsByClassName("tag_name")[0] as HTMLAnchorElement;
+        tag_name.href = tag_link;
+        tag_name.textContent = getLocalText("다운로드", "Download", "ダウンロード");
     }
 }
 
@@ -210,4 +199,5 @@ function changeIcon(): void {
     icon.style.width = size;
     icon.style.height = size;
 }
+
 window.addEventListener('resize', changeIcon);

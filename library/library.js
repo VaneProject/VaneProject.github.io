@@ -1,6 +1,7 @@
 "use strict";
 const bad_word_filtering_version = "1.0.0";
 const simple_math_version = "0.1.0";
+const cut_image_version = "1.0.0";
 function createPre(language, data) {
     const pre = document.createElement("pre");
     const code = document.createElement("code");
@@ -14,23 +15,7 @@ class LibraryContent {
     constructor(pretty_language) {
         this.library_content = document.getElementById("library_content");
         this.pretty_language = pretty_language;
-        // const url: URLSearchParams = new URL(window.location.href).searchParams;
         this.local = getLocal();
-        // if (url.has("language")) {
-        //     switch (url.get("language")) {
-        //         case "eng":
-        //             this.local = Local.ENG;
-        //             break;
-        //         case "jap":
-        //             this.local = Local.JAP;
-        //             break;
-        //         default:
-        //             this.local = Local.KOR;
-        //             break;
-        //     }
-        // } else {
-        //     this.local = Local.KOR;
-        // }
     }
     getLocal() {
         return this.local;
@@ -47,6 +32,9 @@ class LibraryContent {
                 this.library_content.appendChild(document.createElement(tag)).innerText = content_jap;
                 break;
         }
+    }
+    addTags(node) {
+        this.library_content.appendChild(node);
     }
     addCode(content, content_eng = content, content_jap = content) {
         switch (this.local) {
@@ -102,30 +90,28 @@ function setLanguage(...languages) {
 function setGemLink(link) {
     document.getElementsByClassName("rubygems_link")[0].href = link;
 }
-function setLocal(local) {
-    const developer_title = document.getElementsByClassName("developer_title")[0];
-    const license_title = document.getElementsByClassName("license_title")[0];
-    const version_title = document.getElementsByClassName("version_title")[0];
-    const language_title = document.getElementsByClassName("language_title")[0];
-    switch (local) {
-        case Local.KOR:
-            developer_title.textContent = "개발자";
-            license_title.textContent = "라이센스";
-            version_title.textContent = "버전";
-            language_title.textContent = "언어";
-            break;
-        case Local.ENG:
-            developer_title.textContent = "Developer";
-            license_title.textContent = "License";
-            version_title.textContent = "Version";
-            language_title.textContent = "Language";
-            break;
-        case Local.JAP:
-            developer_title.textContent = "開発者";
-            license_title.textContent = "ライセンス";
-            version_title.textContent = "バージョン";
-            language_title.textContent = "言語";
-            break;
+function getLocalText(kor, eng, jap) {
+    switch (getLocal()) {
+        case Local.KOR: return kor;
+        case Local.ENG: return eng;
+        case Local.JAP: return jap;
+    }
+}
+function setElementText(name, kor, eng, jap) {
+    const elements = document.getElementsByClassName(name);
+    if (elements.length > 0)
+        elements[0].textContent = getLocalText(kor, eng, jap);
+}
+function setLocal(tag_link = null) {
+    setElementText("developer_title", "개발자", "Developer", "開発者");
+    setElementText("license_title", "라이센스", "License", "ライセンス");
+    setElementText("version_title", "버전", "Version", "バージョン");
+    setElementText("language_title", "언어", "Language", "言語");
+    setElementText("tag_title", "릴리스", "Releases", "リリース");
+    if (tag_link != null) {
+        const tag_name = document.getElementsByClassName("tag_name")[0];
+        tag_name.href = tag_link;
+        tag_name.textContent = getLocalText("다운로드", "Download", "ダウンロード");
     }
 }
 function setCopyFunction(copy, element) {
