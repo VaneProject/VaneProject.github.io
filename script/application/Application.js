@@ -44,7 +44,9 @@ class Application {
                 <ul style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0">
                     ${createGithub(this.githubUrl)}
                     ${platform}
-                    ${developer}
+                </ul>
+                <ul style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0">
+                    ${developer}                    
                 </ul>
             </a>
         </div>`;

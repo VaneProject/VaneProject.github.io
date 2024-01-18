@@ -34,8 +34,8 @@ class Application {
     }
 
     public create(local: Local): string {
-        let platform = ''
-        let developer = ''
+        let platform: string = ''
+        let developer: string = ''
         this.platforms.forEach(v => {platform += v.create()})
         this.developers.forEach(v => {developer += v.create()})
         return `<div class="application_body">
@@ -49,7 +49,9 @@ class Application {
                 <ul style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0">
                     ${createGithub(this.githubUrl)}
                     ${platform}
-                    ${developer}
+                </ul>
+                <ul style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 0; padding: 0">
+                    ${developer}                    
                 </ul>
             </a>
         </div>`
