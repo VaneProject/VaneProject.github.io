@@ -18,7 +18,7 @@ class Developer {
                         <img src="../../svg/developer.svg" alt="developer" class="svg application_list_icon">
                         ${this.name}
                     </a>
-                </li>`
+                </li>`;
     }
 }
 
