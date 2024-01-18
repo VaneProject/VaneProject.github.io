@@ -1,7 +1,7 @@
 "use strict";
 (function () {
     const lc = new LibraryContent("language-ruby");
-    setLocal(lc.getLocal());
+    setLocal();
     setMainLink(lc.getLocal());
     setTitle('simple-math');
     primaryCreate("", simple_math_version);

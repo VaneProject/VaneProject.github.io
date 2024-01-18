@@ -48,7 +48,7 @@
         "System.out.println(text2);\n";
     lc.addCode("String bad = \"욕설을 욕설 말하는 중\";" + back, "String bad = \"swear word Talking about swear word\";" + back, "String bad = \"悪口を悪口話し中\";" + back);
     lc.addCode("출력\n**을 ** 말하는 중\n--을 -- 말하는 중", "Output\n**Talking about **\n--Talking about --\n", "出力\n**を**話し中\n--を--話し中");
-    setLocal(lc.getLocal());
+    setLocal();
     setMainLink(lc.getLocal());
     setTitle('Bad Word Filtering');
     primaryCreate('badwordfiltering', bad_word_filtering_version);

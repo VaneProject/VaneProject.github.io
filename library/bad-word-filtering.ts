@@ -83,7 +83,7 @@
         "Output\n**Talking about **\n--Talking about --\n",
         "出力\n**を**話し中\n--を--話し中");
 
-    setLocal(lc.getLocal());
+    setLocal();
     setMainLink(lc.getLocal());
     setTitle('Bad Word Filtering');
     primaryCreate('badwordfiltering', bad_word_filtering_version);
