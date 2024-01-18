@@ -15,6 +15,7 @@ const applications = [];
         new Developer("ModernJake"),
         new Developer("keeui0")
     ]));
+    applications.push(new Application("./library/cut-image.html", "./icon/img-cut.PNG", "https://github.com/VaneProject/cut-image", true, "컷 이미지", "image cut", "", "이미지를 빠르게 잘라서 저장할 수 있게 해주는 프로그램입니다.", "", "", [macos, windows], persestitan));
     createApplication(local);
 }).call(null);
 function createApplication(local) {
