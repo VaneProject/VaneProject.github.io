@@ -89,7 +89,7 @@
     setLocal();
     setMainLink(lc.getLocal());
     setTitle('Hangul Editor');
-    primaryCreate('hangul-editor', hangul_editor_version);
+    primaryCreate('hanguleditor', hangul_editor_version);
     setLicense('https://github.com/VaneProject/hangul-editor/blob/master/LICENSE', 'MIT');
     setDeveloper('PersesTitan');
     setLanguage('Java');

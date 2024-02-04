@@ -74,11 +74,11 @@
     lc.addTag("h5", "static HangulSplitItem splitHangul(char word)");
     lc.addTag("p", "word글자를 HangulSplitItem 타입으로 반환");
     lc.addTag("h5", "static List<HangulSplitItem> splitHangul(String words)");
-    lc.addTag("p", "word글자를 HangulSplitItem 타입으로 반환");
+    lc.addTag("p", "word를 리스트 형태의 HangulSplitItem 타입으로 반환");
     setLocal();
     setMainLink(lc.getLocal());
     setTitle('Hangul Editor');
-    primaryCreate('hangul-editor', hangul_editor_version);
+    primaryCreate('hanguleditor', hangul_editor_version);
     setLicense('https://github.com/VaneProject/hangul-editor/blob/master/LICENSE', 'MIT');
     setDeveloper('PersesTitan');
     setLanguage('Java');
