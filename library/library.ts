@@ -1,6 +1,7 @@
 const bad_word_filtering_version: string = "1.0.0";
 const simple_math_version: string = "0.1.0";
 const cut_image_version: string = "1.0.0";
+const hangul_editor_version: string = "1.0.0";
 
 function createPre(language: string, data: string): HTMLPreElement {
     const pre: HTMLPreElement = document.createElement("pre");
@@ -38,7 +39,6 @@ class LibraryContent {
                 this.library_content.appendChild(document.createElement(tag)).innerText = content_jap;
                 break;
         }
-
     }
 
     public addTags<T extends Node>(node: T): void {

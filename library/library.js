@@ -2,6 +2,7 @@
 const bad_word_filtering_version = "1.0.0";
 const simple_math_version = "0.1.0";
 const cut_image_version = "1.0.0";
+const hangul_editor_version = "1.0.0";
 function createPre(language, data) {
     const pre = document.createElement("pre");
     const code = document.createElement("code");

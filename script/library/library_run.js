@@ -20,6 +20,16 @@
     let github = "https://github.com/VaneProject/bad-word-filtering";
     let web = "./library/bad-word-filtering.html";
     libraryList.push(new Library(title_kor, title_eng, title_jap, content_kor, content_eng, content_jap, true, github, javas, persestitan, web));
+    // hangul-editor
+    title_kor = "hangul-editor";
+    title_eng = title_kor;
+    title_jap = title_kor;
+    content_kor = "한글 관련된 기능을 다루는 라이브러리 입니다.";
+    content_eng = "It is a library that deals with functions related to Hangul.";
+    content_jap = "ハングル関連の機能を扱うライブラリーです。";
+    github = "https://github.com/VaneProject/hangul-editor";
+    web = "./library/hangul-editor.html";
+    libraryList.push(new Library(title_kor, title_eng, title_jap, content_kor, content_eng, content_jap, true, github, javas, persestitan, web));
     // language-pack
     title_kor = "language-pack";
     title_eng = title_kor;
